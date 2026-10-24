@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+
+
+html,body{height:100%}
+body {
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:10px;
+}
+
+.mat-mdc-header-row{
+  background-color:rgb(195, 216, 206)!important;
+  height: 30px!important;
+  color:rgb(31, 31, 29)!important;
+ }
+
+  .mat-mdc-row{
+   height: 30px!important;
+  }
+
+  .mat-mdc-row:nth-child(even){
+   background-color:rgb(206, 198, 180);
+   height: 30px!important;
+  }
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

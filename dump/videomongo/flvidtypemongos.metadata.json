@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"cctvtypecode":{"$numberInt":"1"}},"name":"cctvtypecode_1","unique":true}],"uuid":"8fca17dda1bc4852947d410360040445","collectionName":"flvidtypemongos","type":"collection"}

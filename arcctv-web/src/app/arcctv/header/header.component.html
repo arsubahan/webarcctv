@@ -1,0 +1,75 @@
+<div class="container">
+
+  <!-- <nav class="navtop" style="text-align: center"> -->
+  <mat-toolbar class="custom-toolbar">
+    <!-- Spacer to push navigation/dropdown to the right -->
+    <span class="toolbar-spacer"></span>
+
+    @if(!wviewindex){
+    <!-- home -->
+    <button mat-button><a style="color:rgb(233, 230, 225)" routerLink="">Home</a></button>
+
+    <!-- either add new client or  client dropdowh -->
+    @if(!userAuthenticated){
+    <button mat-button><a style="color:rgb(233, 230, 225)" [routerLink]="['/signup']"
+        [queryParams]="{signtype : 'C', wssmode: 'Add'}">Client Signup</a>
+    </button>
+    }
+    @if(userAuthenticated && logintype === 'C'){
+    <button mat-button [matMenuTriggerFor]="settingsMenu">
+      Client Menu
+    </button>
+
+    <!-- Dropdown Menu Definition -->
+    <mat-menu #settingsMenu="matMenu"><mat-icon>arrow_drop_down</mat-icon>
+      <button style="color:rgb(233, 230, 225)" mat-menu-item>
+        <a routerLink="/clhome">client Home </a>
+      </button>
+
+      <button mat-menu-item>
+        <a [routerLink]="['/clprofile']" [queryParams]="{clID : clID, wssmode: 'Modify'}">Client Profile</a>
+      </button>
+
+      <button mat-menu-item>
+        <a [routerLink]="['/clcamera']" [queryParams]="{clID : clID}">RegisterCamera</a>
+      </button>
+    </mat-menu>
+    }
+
+    <!-- admin login or log out-->
+
+    @if(userAuthenticated && logintype === 'A' ){
+    <button mat-button>
+      <a style="color:rgb(233, 230, 225)" routerLink="/dashboard">Dashboard</a>
+    </button>
+    }
+
+    @if(!this.userAuthenticated ){
+    <button mat-button>
+      <a style="color:rgb(233, 230, 225)" [routerLink]="['/login']" [queryParams]="{sectype: 'A' }">Admin Login</a>
+    </button>
+    }
+
+    @if(this.userAuthenticated ){
+    <button mat-button>
+      <a style="color:rgb(233, 230, 225)" (click)="logout()">
+        Logout
+      </a>
+    </button>
+    }
+  } <!-- end of if wviewindex -->
+    <!-- </nav> -->
+
+    <span mat-button style="font-size: 12px; color: rgb(234, 250, 5); float: right; margin-top: 0px;">
+       &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;{{ dateFormatted }}
+      &nbsp;&nbsp;&nbsp;&nbsp; AR Cctv Online
+    </span>
+
+
+
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+</div>
+ @if(!wviewindex){
+<app-footer></app-footer>
+}

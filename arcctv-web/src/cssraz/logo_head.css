@@ -1,0 +1,224 @@
+:root {
+    --background: rgba(212, 236, 231, 0.85);
+  }
+
+
+  * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Verdana, sans-serif;
+    }
+      .mySlides {display: none;}
+/* img {vertical-align: middle;} */
+
+
+   toolbar {
+    background: var(--background); 
+    text-align: left;
+    position:relative;
+    z-index: 999;
+    width: 100%;
+  } 
+
+  @media (max-width: 400px)  {
+    toolbar {
+      display: grid;
+      grid-template-columns:   minmax(300px, 1fr) auto ; /*/* minmax(40px, 1fr);  */
+      background-color: transparent;
+    } 
+    #indextitle {
+      grid-column: 1;
+      justify-items:flex-start;
+      font-size: 8px;
+      margin-left: 0px;
+      height:-50px;
+   }
+
+   #logo-grid{
+     grid-column: 2 ;   
+      margin-left: 25px;
+      /* background-color: rgb(240, 156, 54); */
+   }
+   #logo-img {
+ 
+      /* background: url("../../images/home/ermslogo.png") no-repeat; */
+
+       width: 80%;
+       /* display:none; */
+       box-sizing:border-box;
+       
+     /* height:100px; * /
+      margin-top:-50px; */
+  }
+  }
+
+  @media (min-width: 401px) and (max-width: 767px) {
+  toolbar {
+    display: grid;
+    grid-template-columns:   minmax(350px, 1fr) auto; /* minmax(30px, 1fr); */
+    background-color: transparent;
+  } 
+  #indextitle {
+    grid-column: 1;
+    justify-items: flex-start;
+    font-size: 8 px;
+    margin-left:0px;
+    height:50px;
+ }
+
+ #logo-grid{
+   grid-column: 2 ; 
+   /* background-color: rgb(21, 95, 11); */
+  }
+  #logo-img {
+    grid-column: 2; 
+    width: 25%;
+    float :right;
+    background-color:transparent;
+     box-sizing:border-box;
+     
+   /* height:100px; */
+    
+  }
+  } 
+ 
+  @media (min-width: 768px) and (max-width: 991px) {
+     toolbar {
+       display: grid;
+       grid-template-columns:  minmax(450px, 1fr) minmax(70px, 1fr); 
+       background-color: transparent;
+     } 
+     #indextitle {
+       grid-column: 1;
+       justify-items: flex-start;
+       font-size: 1 em;
+       margin-left: 25px;
+       height:50px;
+      }
+    #logo-grid{
+      grid-column: 2 ; 
+      /* background-color: rgb(236, 129, 143); */
+    }
+
+     #logo-img {
+       /* background: url("../../images/home/ermslogo.png") no-repeat; */
+       grid-column: 2; 
+       width: 25%;
+       float :right;
+       background-color:transparent;
+        margin-top:-40px;
+       /* box-sizing: content-box;
+       width: 20%; 
+      /* height:100px; * /
+       margin-top:-50px; */
+   }
+
+  }
+
+  @media (min-width: 992px) and (max-width: 1199px) {
+     toolbar {
+        display: grid;
+        grid-template-columns:  minmax(450px, 1fr) minmax(70px, 1fr) ;
+        background-color: transparent;
+      } 
+      #indextitle {
+        grid-column: 1;
+        justify-items: flex-start;
+        font-size: 1.2 em;
+        margin-left: 25px;
+        height:50px;
+      } 
+     #logo-grid{
+      grid-column: 2 /span 1; 
+      /* background-color: rgb(102, 88, 180); */
+
+    }
+      #logo-img {
+        /* background: url("../../images/home/ermslogo.png") no-repeat; */
+        grid-column: 2; 
+        width: 25%;
+        float :right;
+        background-color:transparent;
+        margin-top:-45px; 
+    }
+  
+  }
+  @media screen and (min-width: 1200px) {
+     toolbar {
+      background-color:transparent;
+        display: grid;
+        grid-template-columns:  minmax(750px, 1fr) minmax(170px, 1fr);
+        
+      } 
+
+      #indextitle {
+        grid-column: 1;
+        justify-items: flex-start;
+        font-size: 24px;
+        margin-left: 25px;
+      } 
+     #logo-grid{
+      grid-column: 2 ; 
+      /* background-color: rgb(8, 55, 66); */
+
+    }
+      #logo-img {
+        /* background: url("../../images/home/ermslogo.png") no-repeat; */
+         grid-column: 2; 
+         width: 25%;
+         float :right;
+         background-color:transparent;
+        /* box-sizing: content-box;
+        width: 40%; 
+       /* height:100px; */      
+
+        margin-top:-140px; 
+    }
+
+  }
+
+
+
+  /* for slider  */
+   /* for slider  */
+ .split{
+  display: flex;
+  flex-direction: row;
+  height: 500px;
+  width: 45%;
+  position: absolute;
+  z-index: 1;
+     overflow-x: hidden;
+  padding: 10px;
+  margin-left:15px;
+}
+
+.split > * {
+  flex-basis: 100%;
+  gap: 2em
+}
+
+.split > * + *{
+  margin-left:2em;
+}
+
+/* .split {
+  height: 500px;
+  width: 45%;
+  position: fixed;
+  z-index: 0;
+     overflow-x: hidden;
+  padding: 10px;
+  margin-left:15px;
+} */
+
+.left {
+  left: 0;
+  /* background-color: #111; */
+}
+
+.right {
+  right: 0;
+  /* background-color: red; */
+}

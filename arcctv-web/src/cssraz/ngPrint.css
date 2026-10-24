@@ -1,0 +1,31 @@
+@media screen {
+    #printSection {
+        display: inline-block;
+        color: black;
+    }
+}
+
+@media print { 
+    body * {
+        visibility: hidden; 
+    }
+    
+     #printSection, #printSection  * {
+        visibility: visible;
+        position: relative;
+        left: 0;
+        top: 0;
+    } 
+    
+   
+}
+
+@media print {
+    .page-break {
+        page-break-after:always;/*content: '<div class="page-break" ></div>';white-space: pre;*/
+    }
+
+    .print:last-child {
+        page-break-after: "";
+   }
+}

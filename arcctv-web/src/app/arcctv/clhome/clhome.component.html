@@ -1,0 +1,78 @@
+<div id="main-content" class="container">
+    <p align="center"
+        style="width:100%; text-align: center; font-size: 1em; background-color: darkolivegreen; color:cornsilk">
+        Client Dashboard of <br>{{clID}} - {{clname}}
+    </p>
+    <p>Web Streaming in progress - {{picno}} cameras</p>
+    <!--stream viceo/ccv -->
+    <div class="row"
+        style="box-sizing: border-box; background-color: rgb(213, 235, 14); text-align: center; font-size: 1em; width:100%">
+        <div class="col-md-6" align="center" (mouseenter)="startZoom()" (mouseleave)="resetZoom()"
+            style="box-sizing: border-box; border-color: blue; text-align: center; font-size: 1em; width:45%">
+            <!-- <canvas id="streamingCanvas" style="width: 50%; height: auto;" allow="autoplay"></canvas> -->
+            <!-- <canvas id="video-canvas" style="width: 50%; height: auto;" allow="autoplay"></canvas> -->
+            <canvas #videoCanvas id="video-canvas" style="width: 40%; height: auto" allow="autoplay"></canvas>
+            <br>
+            <p style="font-size: small;">Hover over image to zoom</p>
+        </div>
+    </div> <!--end of stream video/ccv -->
+
+    <br>
+    <div align="center"
+        style="width:700px; box-sizing: border-box; border-color: blue; text-align: center; font-size: 1em; width:45%">
+        <p style="font-size: small;background-color: navajowhite;"> Motion Detection </p>
+
+
+
+        <!-- start of marquee -->
+        <div class="row" style="
+        align-content: center;
+          background-color: transparent;
+          margin-top: -10px;
+          margin: auto;
+          width: 100%;
+          display: flex;
+        ">
+            <!-- Marquee for events -->
+            <div align="left" style="height: 300px; width: 30%; margin :auto">
+                <div id="mysagscroller" class="sagscroller" style="
+              background-color: rgb(235, 214, 179);
+              border-top-left-radius: 10px;
+              border-top-right-radius: 10px;
+              border-bottom-left-radius: 10px;
+              border-bottom-right-radius: 10px;
+            ">
+                    <marquee direction="up" scrollamount="3" height="201px" onmouseover="this.stop()"  behavior="scroll" 
+                        onmouseout=" this.start();">
+                        <ul style="color: rgb(20, 29, 36); height: 30%; font-size: 10px;">
+                            @for (motionfl of modetectarr ; track $index) {
+
+                            <li style="padding: 0px; line-height: 1.8; margin-left: -20px">
+                                <p align="center" style="width:100% ; font-size: medium; color:black;"><a
+                                        style="cursor: pointer;" (click)="openMotionDetection(motionfl.mdtdate)"
+                                        class="clickable">{{motionfl.mdtdate | date: 'dd MMM yyyy' }} </a>
+                            </li>
+
+                            }
+                            <!--end for @for -->
+
+                            <!-- end for @if-->
+                        </ul>
+                    </marquee>
+                </div>
+            </div>
+            <!-- end of event marquee -->
+
+
+            <!-- @for (motionfl of modetectarr ; track $index) {
+        <div class="row"
+            style="box-sizing: border-box; border-color: blue; text-align: center; font-size: 1em; width:45%">
+            <div class="col-md-6" align="center"
+                style="box-sizing: border-box; background-color: rgb(245, 244, 228); text-align: center; font-size: 1em; width:100%">
+                <p style="width:100%"><a style="cursor: pointer;" (click)="openMotionDetection(motionfl.mdtdate)"
+                        class="clickable">{{motionfl.mdtdate | date: 'dd MMM yyyy' }} </a></p>
+            </div>
+        </div>
+        } -->
+        </div>
+    </div>

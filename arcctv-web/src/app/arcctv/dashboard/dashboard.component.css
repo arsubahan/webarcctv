@@ -1,0 +1,13 @@
+.mat-mdc-header-row{
+  background-color:rgb(188, 235, 200) !important;
+  height: 40px!important;
+ }
+
+  .mat-mdc-row{
+   height: 40px!important;
+  }
+
+  .mat-mdc-row:nth-child(even){
+   background-color:rgb(255, 174, 0);
+   height: 40px!important;
+  }

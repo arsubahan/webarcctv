@@ -1,0 +1,88 @@
+<div id="main-content" class="container">
+    <span style="background-color: rgb(36, 92, 41); color:bisque"> Mode: {{this.wssmode}}</span>
+    <!-- @if(this.wssmode == "Add" || this.wssmode == "Modify" || this.wssmode ==
+    "Delete"){ -->
+    <div class="form-group" style="
+      background-color: rgb(227, 240, 221);
+      margin: auto;
+      width: 70%;
+      align-items: center;
+      text-align: center;
+      font-size: 0.7em;
+      padding: 10px;
+    ">
+        <form [formGroup]="clientForm">
+            <h3 style="padding : 3px; text-align: center; width: 100%">{{wssmode }} Client</h3>
+
+            <mat-form-field style="padding: 15px ; width: 275px">
+                <mat-label> Member Code</mat-label>
+                <input readonly="true" matInput formControlName="clcode" type="text" />
+                <input hidden readonly="true" matInput formControlName="cltype" type="text" />
+                <input hidden readonly="true" matInput formControlName="cldatereg" type="text" />
+                <mat-icon fontIcon="person" matSuffix></mat-icon>
+            </mat-form-field>
+
+            <mat-form-field style="padding: 15px ; width: 275px ">
+                <mat-label> Name </mat-label>
+                <input matInput formControlName="clname" type="text" required />
+                <mat-icon fontIcon="person" matSuffix></mat-icon>
+                <mat-hint>Please enter Member Name</mat-hint>
+
+            </mat-form-field>
+            <br />
+
+
+            <mat-form-field style="padding: 15px ; width: 275px">
+                <mat-label>Address</mat-label>
+                <textarea matInput formControlName="claddress" type="text" required></textarea>
+                <mat-icon fontIcon="address" matSuffix></mat-icon>
+                <mat-hint>Please enter Member Address</mat-hint>
+            </mat-form-field>
+
+
+            <mat-form-field style="padding: 15px ; width: 275px">
+                <mat-label>Phone</mat-label>
+                <input matInput formControlName="clcontactno" type="text" required />
+                <mat-icon fontIcon="phone" matSuffix></mat-icon>
+            </mat-form-field>
+            <br />
+
+
+            <mat-form-field style="padding: 15px ; width: 275px">
+                <mat-label>Email Address</mat-label>
+                <input matInput formControlName="clemail" type="text" required />
+                 <input hidden matInput class="form-control" formControlName="clpassword" type="password" />
+                <mat-icon fontIcon="email" matSuffix></mat-icon>
+            </mat-form-field>
+
+            <!-- <mat-form-field style="padding: 15px ; width: 275px">
+                <mat-label>Password</mat-label>
+                <input matInput class="form-control" formControlName="clpassword" type="password" />
+                <mat-icon fontIcon="password" matSuffix></mat-icon>
+            </mat-form-field>
+            <br />
+
+            <mat-form-field style="padding: 15px ; width: 275px">
+                <mat-label>re-enter password</mat-label>
+                <input matInput class="form-control" formControlName="verpassword" type="password" />
+                <mat-icon fontIcon="password" matSuffix></mat-icon>
+            </mat-form-field>
+            @if(clientForm.errors?.['classwordmatcherror'] ){
+            <br>
+            <span style="font-size: medium;  margin-top:-20px; background-color: crimson; color:aliceblue"> Password
+                does not match </span>
+            } -->
+            <br />
+            <!-- @if(this.wssmode == "Add" ){ -->
+            <button [disabled]="clientForm.invalid" mat-flat-button (click)="updateclient(clientForm.value)"
+                style="height: 20px">
+                Update
+            </button>
+            <!-- } -->
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button mat-flat-button style="height: 20px" (click)="cancelcmd()">
+                Cancel
+            </button>
+        </form>
+
+    </div> <!-- End of main content -->

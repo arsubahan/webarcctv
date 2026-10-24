@@ -1,0 +1,102 @@
+<div id="main-content" class="container">
+  <p style="
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      width: 100%;
+    ">
+    Welcome to dashboard <br />
+    {{ staffid }} {{ staffname }}
+  </p>
+
+  <p class="center" style="
+      margin: auto;
+      width: 60%;
+      background-color: rgb(188, 235, 200);
+      color: rgb(20, 14, 1);
+      text-align: center;
+    ">
+    Codes File Maitenance
+  </p>
+  <div style="margin: auto; width: 20%; text-align: center">
+    <img src="images/dashboard/download.jpeg" alt="Codes File Maitenance" />
+  </div>
+
+  <!-- menu for Codes File Maitenance -->
+
+  <div class="dropdown center" style="
+      padding: 5px;
+      margin: auto;
+      width: 40%;
+      text-align: center;
+      background-color: rgb(188, 235, 200);
+      color:black
+    ">
+
+    @if(this.sessiontype == "A") {
+    <p class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Staff File
+    </p>
+    <ul class="dropdown-menu" style="">
+      <li>
+        <a class="dropdown-item" [routerLink]="['/signup']" [queryParams]="{signtype : 'A', wssmode: 'Add'}">
+          Add Staff File</a>
+      </li>
+      <li><a class="dropdown-item" [routerLink]="['/signup']" [queryParams]="{ wssmode: 'Maintenance' }">Maintain Staff
+          File</a></li>
+    </ul>
+    <br />
+
+    <p class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Location File
+    </p>
+    <ul class="dropdown-menu" style="">
+      <li>
+        <a class="dropdown-item" class="dropdown-item" [routerLink]="['/locationfl']"
+          [queryParams]="{wssmode: 'Add' }">Add Location File</a>
+      </li>
+
+      <li>
+        <a class="dropdown-item" class="dropdown-item" [routerLink]="['/locationfl']"
+          [queryParams]="{wssmode: 'Maintenance' }">Maintain Location File</a>
+      </li>
+    </ul>
+    <br />
+    }
+
+    <p class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Video Type
+    </p>
+    <ul class="dropdown-menu" style="">
+      <!-- <li><a class="dropdown-item" routerLink="/signup?wssmode='ADD'">AddVideo Type</a></li> -->
+      <li>
+        <a class="dropdown-item" [routerLink]="['/videotype']" [queryParams]="{wssmode: 'Add' }">AddVideo Type
+        </a>
+      </li>
+
+      <li>
+        <a class="dropdown-item" class="dropdown-item" [routerLink]="['/videotype']"
+          [queryParams]="{wssmode: 'Maintenance' }">Maintain Video Type</a>
+      </li>
+    </ul>
+    <br />
+
+        <p class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Configuration File
+    </p>
+    <ul class="dropdown-menu" style="">
+      <!-- <li><a class="dropdown-item" routerLink="/signup?wssmode='ADD'">AddVideo Type</a></li> -->
+       <li>
+        <a class="dropdown-item" [routerLink]="['/config']" [queryParams]="{wssmode: 'Add' }">Add Configuration File
+        </a>
+      </li> 
+
+      <li>
+        <a class="dropdown-item" class="dropdown-item" [routerLink]="['/config']"
+          [queryParams]="{wssmode: 'Maintenance' }">Maintain Configuration File</a>
+      </li>
+    </ul>
+    <br />
+  </div>
+</div>

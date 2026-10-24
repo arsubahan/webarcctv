@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.container {
+  max-width: 100%;
+  height: 95%;
+  margin: auto;
+  background-color: transparent;
+}
+
+nav {
+  background: #44500f;
+  padding: 5px;
+  height: 25px;
+  margin-top: -4px;
+}
+
+nav ul {
+  margin: 0;
+}
+
+nav>ul {
+  display: flex;
+}
+
+nav>ul>li {
+  margin-right: 10px;
+}
+
+nav a {
+  display: block;
+  padding: 0px 16px;
+  color: #a8f0ba;
+  font-size: 11px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav li:hover>a {
+  background: #ece4e4;
+}
+
+nav a.drop::after {
+  content: "";
+  display: inline-block;
+  border: 5px solid;
+  border-color: #d3e6d7 transparent transparent;
+  margin: -3px 3px;
+}
+
+nav .dropdown {
+  display: none;
+  position: absolute;
+  background: #222;
+}
+
+nav li:hover .dropdown {
+  display: block;
+}
+
+.mat-form-field {
+  font-size: 10px;
+  width: 280px;
+
+  &.mat-focused {
+    font-size: 10px;
+  }
+
+  .mat-input-element {
+    width: 100%;
+    font-size: 10px;
+  }
+
+  &::placeholder {
+    font-size: 10px;
+  }
+}
+
+.custom-toolbar {
+  /* Change the background and text color using Angular Material tokens */
+  --mat-toolbar-container-background-color: #062e09;
+  --mat-toolbar-container-text-color: #e7f5e5;
+  
+  /* Change the height */
+  height: 30px; 
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Force the button text and nested mat-icon to be white */
+.white-toolbar-btn {
+  color: #ffffff !important;
+}
+
+/* Optional: Align the icon vertically with your text */
+.white-toolbar-btn mat-icon {
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+
+html,body{height:100%}
+body {
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:10px;
+}
+
+.mat-mdc-header-row{
+  background-color:rgb(195, 216, 206)!important;
+  height: 30px!important;
+  color:rgb(31, 31, 29)!important;
+ }
+
+  .mat-mdc-row{
+   height: 30px!important;
+  }
+
+  .mat-mdc-row:nth-child(even){
+   background-color:rgb(206, 198, 180);
+   height: 30px!important;
+  }
+  mat-toolbar {
+  height: 64px;
+  background-color: #184d14;
+  color: white;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+mat-toolbar span {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+mat-toolbar button {
+  color: white;
+}
+
+  
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

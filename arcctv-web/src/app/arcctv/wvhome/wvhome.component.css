@@ -1,0 +1,291 @@
+.container {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center;     /* Vertical centering */
+ /* height: 100vh;    */       /* Required for vertical centering on the whole page */
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+}
+
+.rightArrow {
+  align-content: center;
+  position: relative;
+  margin: auto;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 0px;
+  font-size: 40px;
+  color: #e8f7ef;
+  z-index: 1;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.leftArrow {
+  align-content: center;
+  position: relative;
+  margin:auto;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 12px;
+  font-size: 40px;
+  color: #e8f7ef;
+  z-index: 1;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.slider {
+  position: absolute;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.dotsContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.dot {
+  margin: 0 3px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+   visibility: hidden;
+   display: block;
+   font-size: 0;
+   content: " ";
+   clear: both;
+   height: 0;
+   }
+.clearfix { display: inline-block; }
+* html .clearfix { height: 0%; }
+.clearfix { display: block; }
+
+.row {
+  margin: 0 auto;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.column {
+  float: left;
+  padding: 0px;
+}
+
+.span_3 {
+  width: 33.3333%;
+}
+.span_2 {
+  width: 5%;
+  height:450px;
+}
+
+.span_4 {
+  width: 44%;
+  height:450px;
+}
+
+.image-container {
+  position: relative; /* Required for fill mode to work correctly */
+  height: 600px;      /* Define the container's size */
+  width:480px;
+}
+
+/*date 2801202025*/
+.slider {
+position: relative;
+height: 100%;
+width: 100%;  
+}
+.slide-overflow {
+  overflow: hidden;
+  height: 100%
+}
+.slides-container {
+  display: flex;
+  height: 50%;
+  background-color: rgb(147, 221, 147);
+}
+.slide {
+  height: 100%;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0 ;
+}
+
+/*raz 31122025 */
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+ width:550px; 
+ height:50px;
+  text-align: center;
+  background-color: #c43535;
+  color: white;
+
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+ /* Define the container's size and overflow behavior */
+  .scrollable-div {
+    width: 300px; /* Optional: set width as needed */
+    height: 150px; /* Set the fixed height */
+    border: 0px solid #ccc; /* Optional: add a border for visibility */
+    overflow-y: auto; /* Add vertical scrollbar only when needed */
+    padding: 0px; /* Optional: padding inside the div */
+  }
+
+  /* Content inside the div can be as long as needed * /
+  .content {
+    /* No specific height needed for content * /
+  } */
+
+  .div-above, .div-below {
+    /* These are the default values and ensure vertical stacking */
+    display: block; 
+    width: 100%; /* Takes full width by default */
+}
+
+.marquee-container {
+  width: 100%;
+  height: 50px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-width: auto;
+
+}
+
+.marquee-content {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Optional scrollbar styling */
+.marquee-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.marquee-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.marquee-container::-webkit-scrollbar-track {
+  background: #eee;
+}

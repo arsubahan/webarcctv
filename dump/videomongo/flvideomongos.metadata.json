@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"vidclcode":{"$numberInt":"1"},"vidcamno":{"$numberInt":"1"}},"name":"vidclcode_1_vidcamno_1","unique":true}],"uuid":"74f8e16bb84144cdb2188b6e6e7e5530","collectionName":"flvideomongos","type":"collection"}

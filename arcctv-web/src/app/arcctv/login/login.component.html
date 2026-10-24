@@ -1,0 +1,45 @@
+<div id="main-content" class="container">
+  <form (ngSubmit)="onSubmit()" [formGroup]="loginForm" novalidate>
+    <div class="form-group" style="
+       background-color: rgb(205, 245, 197);
+       margin-left: 450px;
+       width: 50%;
+       align-items: center;
+       text-align: center;
+       font-size: .7em;
+       padding:10px
+     ">
+      <h3 style="text-align: center; width: 100%">Login for {{wssmode}} </h3>
+
+ 
+      <mat-form-field style="width: 375px">
+        <mat-label> Member Code</mat-label>
+        <input matInput oninput="this.value = this.value.toUpperCase()" class="form-control" formControlName="UsStaffcd" type="text" />
+
+        <mat-icon fontIcon="person" matSuffix></mat-icon>
+      </mat-form-field>
+
+
+
+      <mat-form-field style="width: 375px">
+        <mat-label> Password</mat-label>
+        <input matInput class="form-control" formControlName="UsPassword" type="password" />
+        <mat-icon fontIcon="password" matSuffix></mat-icon>
+      </mat-form-field>
+
+      <br>
+      <button [disabled]="loginForm.invalid" type="submit" class="btn btn-success">
+        Login
+      </button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <a   class="btn btn-success" (click) = "forgotpasword()">
+        Forgot Passward
+     </a>
+
+    </div>
+  </form>
+  <!-- end for login form -->
+</div>
+<!-- end for main-content -->
+
+

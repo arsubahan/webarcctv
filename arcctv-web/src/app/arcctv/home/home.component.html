@@ -1,0 +1,103 @@
+<div id="main-content" class="container">
+    <div class="col-md-12">
+        <h1 style="text-align: center; font-size: 20px; font-weight: bold;">Welcome to ARcctv</h1>
+        <p style="text-align: center; font-size: 12px; margin-top: -30px;">Your one-stop solution for all your CCTV
+            needs. Explore our services and find the perfect security solution for your home or business.</p>
+
+    </div> <!--end for header-->
+
+    <!-- Row 1 -->
+    <div class="row"
+        style="background-color: blanchedalmond; height:302px; width:100%; margin-top: 0px; margin-bottom: 0px;">
+        <div class="col-md-4">
+            <p style="text-align: justify; margin-top: 20px;">
+                CCTV camera, and IP Camera provide home and business owners sense of security. The development of
+                technology
+                is so rapid, that it has introduced lots of varieties with different features and specification. Whether
+                the
+                customers require keeping an eye from on static place or from mobile phones; both options can be availed
+                due
+                to new technology.
+            </p>
+        </div> <!--end for box 1-->
+
+        <div class="col-md-4"
+            style="background-color: rgb(9, 53, 42); height:302px; width:33%; margin-top: 0px; margin-bottom: 0px;">
+            <form (ngSubmit)="onSubmit()" [formGroup]="loginForm" novalidate>
+                <div class="form-group"
+                    style="background-color:transparent; width: 100%; align-items: center; 
+                                                text-align: center; font-size: .7em; padding:0px; border-radius: 10px; margin: auto;">
+                    <h3 style=" font-size: 1.8em; color:aliceblue; width: 100%">Client Login</h3>
+
+                    <mat-form-field style="width:fit-content">
+                        <mat-label> Client Code.</mat-label>
+                        <input matInput oninput="this.value = this.value.toUpperCase()" class="form-control"
+                            formControlName="clcode" type="text" />
+
+                        <!-- <input readonly matInput class="form-control" formControlName="Uslevel" type="text" /> -->
+
+                        <mat-icon fontIcon="person" matSuffix></mat-icon>
+                    </mat-form-field>
+
+
+                    <mat-form-field style="width: fit-content">
+                        <mat-label> Password</mat-label>
+                        <input matInput class="form-control" formControlName="clpassword" type="password" />
+                        <mat-icon fontIcon="password" matSuffix></mat-icon>
+                    </mat-form-field>
+
+                    <br>
+                    <button [disabled]="loginForm.invalid" type="submit" class="btn btn-success">
+                        Login
+                    </button>
+                    &nbsp;&nbsp;&nbsp;
+                    <a class="btn btn-success" (click)="forgotpasword()">
+                        Forgot Passward
+                    </a>
+
+                </div>
+            </form>
+            <!-- end for login form -->
+        </div> <!--end for box 2-->
+
+        <div class="col-md-4"
+            style="background-image: url(images/cctc_index_04.gif); background-size: cover; background-repeat: no-repeat; margin-top: 0px; margin-bottom: 0px;">
+
+        </div> <!--end for box 3-->
+    </div> <!--end for row 1-->
+
+    <!-- Row 2 -->
+    <div class="row"
+        style="background-color: blanchedalmond; height:220px; width:100%; margin-top: 20px; margin-bottom: 0px;">
+        <div class="col-md-4"
+            style="background-image: url(images/cctc_index_02.gif); background-size: cover; background-repeat: no-repeat; margin-top: 0px; margin-bottom: 0px;">
+        </div> <!--end for box 1-->
+        <div class="col-md-4"
+            style="background-image: url(images/cctv_5.jpg); background-size: cover; background-repeat: no-repeat; margin-top: 0px; margin-bottom: 0px;">
+        </div> <!--end for box 1-->
+        <div class="col-md-4" style="margin-top: 0px; margin-bottom: 0px;">
+            <p style="text-align: justify; margin-top: 20px;">
+                Hence, live and recorded footage facility is provided which can be accessed from mobile phones also. The
+                safer the place is, the secure the output of work will be. The surveillance
+                CCTV Camera systems with different specifications are available with different packages for different
+                customer
+            </p>
+        </div> <!--end for box 1-->
+    </div> <!--end for row 2-->
+
+    <!-- Row 3 -->
+    <div class="row"
+        style="background-color: blanchedalmond; height:220px; width:100%; margin-top: 20px; margin-bottom: 0px;">
+        <div class="col-md-4"
+            style="background-image: url(images/cctc_index_07.gif); background-size:cover; background-repeat: no-repeat; margin-top: 0px; margin-bottom: 0px;">
+        </div> <!--end for box 3-->
+        <div class="col-md-4"
+            style="background-image: url(images/cctv_4.jpg); background-size: cover; background-repeat: no-repeat; margin-top: 0px; margin-bottom: 0px;">
+        </div> <!--end for box 3-->
+        <div class="col-md-4"
+            style="background-image: url(images/cctv_7.jpg); background-size: cover; background-repeat: no-repeat; margin-top: 0px; margin-bottom: 0px;">
+        </div> <!--end for box 3-->
+    </div> <!--end for row 3-->
+
+</div>
+

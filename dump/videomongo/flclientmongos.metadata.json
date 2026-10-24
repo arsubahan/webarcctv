@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"clcode":{"$numberInt":"1"}},"name":"clcode_1","unique":true}],"uuid":"6f20a78f76724009916a31772352954b","collectionName":"flclientmongos","type":"collection"}

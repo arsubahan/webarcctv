@@ -1,0 +1,120 @@
+<div id="main-content" style=" background-size: 100% 100%; padding: 2px">
+    <div align="center"
+        style=" display: flex; justify-content: center;  align-items: center; margin-left: 0px; width:100%; text-align: center; font-size: 1em; background-color: transparent;">
+        <p align="center" style="margin-top: -10px;  width:100%; text-align: center; font-size: 1em;">
+            Motion Detection View on {{ currentDate | date: 'dd MMM yyyy' }}
+
+            <br>
+            <!-- </p>
+        <p align="center" style="margin-top: -15px; width:100%; text-align: center; font-size: 1em; "> -->
+            Web Streaming in progress - {{this.slidetot}} images
+        </p>
+    </div>
+    <!-- start before slider -->
+
+
+
+    <div align="center" class="row">
+
+        <div class="span_3 column"
+            style=" display: flex;  justify-content: center;  align-items: center; width:99%; height: 20px;">
+
+            <p
+                style=" width:100%; text-align: center; margin-left: 0px; margin-bottom: 0px; padding:0px; color: aliceblue; background-color: rgb(1, 14, 1);">
+                Image
+                {{currentIndex + 1 }} of {{slidetot }}
+            </p>
+
+        </div>
+
+        <!-- style=" display: flex; justify-content: center; align-items: center; 
+        margin-left: 0px; width:100%; text-align: center; font-size: 1em; background-color: green;"> -->
+
+        <!-- previous arroww -->
+        <div align="left" class="span_3 column"
+            style=" padding: 0;  width: 10%; height: 640px; margin-left: 0px; background-color: rgb(5, 75, 42)">
+            @if(currentIndex > 0 ){
+            <div style="display: flex;  justify-content: center;" (click)="goToPrevious()" class="leftArrow">❰</div>
+            }
+        </div>
+        <!-- end of previous arroww -->
+
+
+        <!-- slider -->
+        <div class="span_3 column" style="
+          float: left;
+          border: 1px solid transparent;
+          background-color: transparent;
+          background-size: cover; 
+          width:79%;
+            height: 640px;
+          margin-left: 0px;
+          margin: top 0px;
+          font-size: smaller;">
+
+            <!-- <div class="numbertext" style="
+            font-size: 1em;
+            color:azure;
+            width: 100%;
+            margin-top: 0px;
+            background-color: rgb(42, 66, 56);
+            text-align: center;
+          ">
+            {{currentIndex + 1 }} / {{slidetot }}
+        </div> -->
+
+            <!-- <img  src="getCurrentSlideUrl()  "style="max-width:450px; max-height: 500px; margin-top:0px" alt=" {{getCurrentSlideUrl()}}"> -->
+            <!-- <img [ngSrc] ="{{getCurrentSlideUrl()}}" object-fit: cover width="550" height="550" priority> -->
+
+            @if(this.slideurl){
+            <img [ngSrc]="this.slideurl" width="850" height="640" priority>
+
+            }
+
+        </div>
+        <!-- end of slider -->
+
+
+
+        <!-- right arrow -->
+        <div align="right" class="span_3 column"
+            style=" padding: 0;  width: 10%; height: 640px; margin-left: 0px; background-color: rgb(5, 75, 42)">
+            @if(currentIndex < slidetot -1 ){ <div style="display: flex;  justify-content: center;" (click)="goToNext()"
+                class="rightArrow">
+                ❱
+        </div>
+        }
+    </div>
+    <!-- end of right arrow -->
+
+    <div
+        style="width:99%;  height:20px; vertical-align: middle; margin-top: 0px; background-color:rgb(5, 75, 42) ; color: rgb(239, 250, 244);  text-align: center;">
+        <p align="center">
+            {{this.displayDate | date: 'dd MMM yyyy HH:MM:ss'}}</p>
+    </div>
+
+
+
+    <!--select by number-->
+
+    <div class="scrollable-div " align="center"
+        style=" margin-left: 0px; height:100px; width:99%;  background-color:rgb(155, 228, 170); ">
+        <p align="center"
+            style=" margin-left: 0px; margin-bottom: -3px; padding: 3px; color:aliceblue; background-color: darkgreen;">
+            Click to select an image
+        </p>
+        @for (picnt of piclist ; track $index) {
+        <a style="margin-top: 15px; cursor: pointer;   width: 100%; font-size: 0.9em; background-color: rgb(179, 194, 137); color:rgb(1, 10, 17)"
+            (click)="goToSlide($index)" class="clickable">
+            &nbsp;{{
+            $index +
+            1 }}&nbsp;
+        </a>
+        }
+    </div>
+    <!--select by number-->
+
+
+</div> <!--wrap left right slide-->
+
+</div>

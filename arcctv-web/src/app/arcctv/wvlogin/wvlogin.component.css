@@ -1,0 +1,22 @@
+body {
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+html, body {
+  overscroll-behavior: none;
+  overflow: hidden; /* Lock the main window, scroll inside components instead */
+  height: 100%;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none; /* Prevent text selection on UI elements */
+  user-select: none;
+}
+input, textarea {
+  -webkit-user-select: text; /* Re-enable for inputs */
+  user-select: text;
+}

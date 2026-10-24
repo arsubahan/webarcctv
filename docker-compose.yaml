@@ -1,0 +1,98 @@
+services:
+#bStreaming service
+ 
+#backend service
+  arcctv-stream:
+    build:
+      context: ./arcctv-stream
+      dockerfile: Dockerfile
+#      args:
+ #       - IMAGE_NAME=arcctv-server
+  #  image: arcctv-server
+    container_name: arcctv-stream
+    ports:
+      - "3265:3265"
+    volumes:
+      - .:/arcctvapp
+    networks:
+      - arcctvnet
+    environment:
+    #  PORT: 3060
+      MONGO_URI: mongodb://mongo_db:27017
+      DB_NAME: videomongo
+
+    depends_on:
+      - mongo_db
+    restart: always
+
+#backend service
+  arcctv-server:
+    build:
+      context: ./arcctv-server
+      dockerfile: Dockerfile
+#      args:
+ #       - IMAGE_NAME=arcctv-server
+  #  image: arcctv-server
+    container_name: arcctv-server
+    ports:
+      - "3250:3250"
+    volumes:
+      - .:/arcctvapp
+    networks:
+      - arcctvnet
+    environment:
+    #  PORT: 3060
+      MONGO_URI: mongodb://mongo_db:27017
+      DB_NAME: videomongo
+
+    depends_on:
+      - mongo_db
+    restart: always
+
+  #frontend ANgula 18 service
+  arcctv-web:
+    build:
+      context: ./arcctv-web
+      dockerfile: Dockerfile
+ #     args:
+  #      - IMAGE_NAME=arcctv-web
+   # image: arcctv-web
+    container_name: arcctv-web
+    ports:
+      - "3200:80"
+    networks:
+      - arcctvnet
+    volumes:
+      - .:/arcctvapp
+      - image_volume:/clientimg
+    depends_on:
+      - arcctv-server
+    restart: always
+
+  #ffmpeg-transcoder:
+  #  image: jrottenberg/ffmpeg:6.1-alpine
+  #  container_name: ffmpeg_transcoder
+  #  restart: always
+
+  mongo_db:
+    image: mongo:8.2.1-noble
+    container_name: arcctv-mongo
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo_db:/data/db
+    networks:
+      - arcctvnet
+    restart: always
+ 
+ 
+networks:
+  arcctvnet:
+    name: arcctvnet
+    driver: bridge
+
+volumes:
+  mongo_db: #{}  Persist MongoDB data
+  image_volume: #{}  Persist image volume data
+
+

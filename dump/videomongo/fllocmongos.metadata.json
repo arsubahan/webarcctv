@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"loccode":{"$numberInt":"1"}},"name":"loccode_1","unique":true}],"uuid":"0600487c6d5c41f7a36724eb69c452b6","collectionName":"fllocmongos","type":"collection"}

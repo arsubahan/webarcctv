@@ -1,0 +1,154 @@
+<div id="main-content" class="container">
+    @if(this.wssmode == "Add" || this.wssmode == "Modify" || this.wssmode ==
+    "Delete"){
+    <div class="form-group" style="
+      background-color: rgb(235, 209, 170);
+      margin: auto;
+      width: 50%;
+      align-items: center;
+      text-align: center;
+      font-size: 0.7em;
+      padding: 10px;
+    ">
+        <h3 style="text-align: center; width: 100%">{{ wssmode }} Location FIle</h3>
+        <form [formGroup]="LocForm">
+            <!--Location Code-->
+            <mat-form-field style="width: 375px">
+                <mat-label> Location Code</mat-label>
+                <input readonly="true" matInput formControlName="loccode" type="text" />
+                <mat-icon fontIcon="book" matSuffix></mat-icon>
+            </mat-form-field>
+            <br />
+
+            <!--Location Description-->
+            <mat-form-field style="width: 375px">
+                <mat-label>Location Description</mat-label>
+                <input matInput formControlName="locdesc" type="text" required>
+                <mat-icon fontIcon="address" matSuffix></mat-icon>
+                <mat-hint>Please enter Location Description</mat-hint>
+            </mat-form-field>
+            <br />
+            <br />
+
+             <br />
+            <br />
+
+  
+            <br />
+            @if(this.wssmode == "Add" ){
+            <button [disabled]="LocForm.invalid" mat-flat-button (click)="addupdate(LocForm.value)"
+                style="height: 20px">
+                Add
+            </button>
+            }@else{
+            <button mat-flat-button (click)="addupdate(LocForm.value)" style="height: 20px">
+                Update
+            </button>
+            } &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button mat-flat-button style="height: 20px" (click)="cancelcmd()">
+                Cancel
+            </button>
+        </form>
+        <!--end for add modify delete form-->
+    </div>
+    <!--end for div class=form-group-->
+
+    }
+    <!--end for wssmode = add modify Delete-->
+    <!-- Start of Maintenance form -->
+    @if(this.wssmode == "Maintenance"){
+
+    <h5 style="text-align: center; width: 100%">{{ wssmode }} Location</h5>
+    <form [formGroup]="LocmodForm" novalidate>
+        <mat-form-field style="padding: 5px; font-size: 10px; width: 200px">
+            <mat-label> Location Code</mat-label>
+            <input readonly="false" matInput class="form-control" (input)="searchFilter()" formControlName="loccode"
+                type="text" #loccode />
+            <mat-icon fontIcon="person" matSuffix></mat-icon>
+        </mat-form-field>
+
+        <mat-form-field style="padding: 5px; font-size: 10px; width: 200px">
+            <mat-label> description</mat-label>
+            <input class="form-control" matInput (input)="searchFilter()" formControlName="locdesc" type="text"
+                #locdesc />
+            <mat-icon fontIcon="person" matSuffix></mat-icon>
+        </mat-form-field>
+    </form>
+    <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"> -->
+
+    <!-- <mat-paginator
+    style="margin: auto"
+    [length]="100"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    aria-label="Select page"
+  >
+  </mat-paginator> -->
+
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+        <!--- Note that these columns can be defined in any order.
+             The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="loccode">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Location No.</th>
+            <td mat-cell *matCellDef="let Locdetail">
+                {{ Locdetail.loccode }}
+            </td>
+        </ng-container>
+        <!-- Name Column -->
+        <ng-container matColumnDef="locdesc">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Location Title</th>
+            <td mat-cell *matCellDef="let Locdetail">
+                {{ Locdetail.locdesc}}
+            </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="chaptemail">
+            <th mat-header-cell *matHeaderCellDef>Email Address</th>
+            <td mat-cell *matCellDef="let Locdetail">
+                {{ Locdetail.chaptemail }}
+            </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="Edit">
+            <th mat-header-cell *matHeaderCellDef>Edit</th>
+            <td mat-cell *matCellDef="let Locdetail">
+                <!-- <a mat-flat-button routerlink = "/Loc?wssmode=Modify" style="height:20px">Edit</a> -->
+                <a mat-flat-button style="height: 20px" (click)="populate(Locdetail)">Edit</a>
+
+                <!-- <a
+           mat-flat-button
+           style="height: 20px"
+           [routerLink]="['/Loc']"
+           [queryParams]="{ wssmode: 'Modify', staffdet }"
+           >Edit</a
+         > -->
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Delete">
+            <th mat-header-cell *matHeaderCellDef>Delete</th>
+            <td mat-cell *matCellDef="let Locdetail">
+                <button mat-flat-button color="warn" style="height: 20px" (click)="delecmd(Locdetail)">
+                    Delete
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let chaptdet; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+    }
+    <!-- end fo Maintenance form -->
+</div>
+<!-- end of id  maint content -->
+
+

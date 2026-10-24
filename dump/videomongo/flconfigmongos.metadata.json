@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"configcode":{"$numberInt":"1"}},"name":"configcode_1","unique":true}],"uuid":"b96f1d44033f4acba5a95c69a682c1ac","collectionName":"flconfigmongos","type":"collection"}

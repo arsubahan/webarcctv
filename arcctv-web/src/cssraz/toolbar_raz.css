@@ -1,0 +1,245 @@
+﻿/* UTILITIES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: cursive;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+
+/* NAVBAR STYLING STARTS */
+.navbar {
+    display: block;
+    align-items: left;
+    height:25px;
+    justify-content: space-between; 
+     padding: 1px;
+    background-color: #093a3a;
+    color: #fff;
+
+}
+
+.nav-links a {
+    color: rgb(204, 243, 224);
+}
+
+/* LOGO * /
+   .logo {
+    font-size: 32px;
+   }
+   /* NAVBAR MENU */
+.menu {
+    display: flex;
+     gap: 2em;   /* - to get longer item in toobar */
+    font-size: 12px;
+    margin-left: 25px;
+    
+   
+}
+
+.menu li:hover {
+    background-color: #b0f7f7; /*raz */
+    border-radius: 5px;
+    height:25px;
+    transition: 0.3s ease;
+}
+
+.menu li {
+    width:max-content;
+    /* padding: 5px 80px; */
+    /* background-color: aqua; */
+  
+}
+
+/* DROPDOWN MENU */
+.services {
+    position: relative;
+}
+
+.dropdown {
+    background-color: rgb(78, 105, 226);
+    /*   rgb(1, 139, 139) raz */
+    padding: 1em 0;
+    position: absolute;
+    /*WITH RESPECT TO PARENT*/
+    display: none;
+    border-radius: 8px;
+    top: 35px;
+}
+
+.dropdown li+li {
+    margin-top: 10px;
+}
+
+.dropdown li {
+    padding: 0.5em 1em;
+    width: 8em;
+    text-align: center;
+}
+
+.dropdown li:hover {
+    background-color: #4c9e9e;
+}
+
+.services:hover .dropdown {
+    display: block;
+}
+
+
+/*RESPONSIVE NAVBAR MENU STARTS*/
+/* CHECKBOX HACK */
+input[type=checkbox] {
+    display: none;
+}
+
+/*HAMBURGER MENU*/
+.hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+}
+
+.kampong{
+    display :block;
+}
+
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 600px) {
+    .menu {
+        display: none;
+        position: relative;
+        background-color: #093a3a;
+        /*raz rgb(7, 71, 71) */
+        right: 0;
+        left: 0;
+        text-align: left;
+        padding: 10px 0;
+    }
+
+    .menu li:hover {
+        display: inline-block;
+        background-color: #063838;
+        transition: 0.3s ease;
+    }
+
+    .menu li+li {
+        margin-top: 12px;
+    }
+
+    input[type=checkbox]:checked~.menu {
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .dropdown {
+        left: 50%;
+        top: 30px;
+        transform: translateX(35%);
+    }
+
+    .dropdown li:hover {
+        background-color: #4c9e9e;
+    }
+
+    .kampong{
+        display :none;
+    }
+}
+
+/*ENd of tool bar*/
+
+
+.jumbotron_raz {
+    
+   
+    border-image-repeat: stretch;
+     width: 100%;
+    height: auto; 
+    
+}
+
+
+
+.jumbotron_raz .img {
+    align-content: center;
+    width:30%;
+    height:30%;
+}
+
+label {
+  /*  font-family: Georgia, "Times New Roman", Times, serif;*/
+    font-size: 12px;
+    color: #333;
+    height: 20px;
+    width: 120px;
+    /* margin-top: 10px;
+    margin-left: 10px;
+    
+    margin-right:15px; */
+    text-align: right; 
+     float:left;  
+}
+
+
+/* .jumbotron .div .column
+    /* Create three equal columns that floats next to each other * /
+ {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration * /
+  } */
+
+  /* for progress bar * /
+  .progress-wrapper{
+    display: none;
+  }
+  progress[value] {
+    /* Reset the default appearance * /
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    
+    /* Get rid of default border in Firefox. * /
+    border: none;
+    
+  }
+  
+  
+  progress[value]::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  }
+  
+  
+  progress[value]::-webkit-progress-value {
+    background-image:
+         -webkit-linear-gradient(-45deg, 
+                                 transparent 33%, rgba(0, 0, 0, .1) 33%, 
+                                 rgba(0,0, 0, .1) 66%, transparent 66%),
+         -webkit-linear-gradient(top, 
+                                 rgba(255, 255, 255, .25), 
+                                 rgba(0, 0, 0, .25)),
+         -webkit-linear-gradient(left, #DFD139, #C83C36);
+  
+      border-radius: 2px; 
+      background-size: 35px 20px, 100% 100%, 100% 100%;
+    
+  }
+  /* end of progress bar*/

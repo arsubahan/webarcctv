@@ -1,0 +1,272 @@
+ /* .book{
+  margin: auto;
+  margin-top: 2rem;
+  transform: translate(0,0);
+  perspective: 5000px;
+  max-width: 40%;
+  height: 800px;class="book"
+  position: relative;
+  transition:all 1s ease;
+}
+.page{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* top: 0;
+  right: 0; * /
+  background-color: pink;
+  cursor: pointer;
+  transition:all 1s ease;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+}
+.active{
+  z-index: 1;
+}
+.page.flipped{
+  transform:rotateY(-180deg)
+}
+#pdf_renderer_rt,#pdf_renderer_lf{
+  text-align: center;
+  position: absolute;
+  backface-visibility:hidden;
+  width: 100%;
+  height: 100%;
+}
+#pdf_renderer_rt{
+  transform:rotateY(180deg)
+} 
+
+
+/* new style
+.hold{
+  width: 1000px;
+  margin: auto;
+  position: relative;
+  display: block;
+  height: 600px;
+  margin-top:-130px
+}
+.shadow{
+  position: absolute;
+  width: 500px;
+  left: 50%;
+  top: 150px;
+  height: 300px;
+  box-shadow: 6px 4px 10px 0px rgba(0,0,0, 0.7);
+}
+.page-holder{
+  height: 600px;
+  width: 1000px;
+  position: absolute;
+  overflow: hidden;
+  cursor: pointer;
+/*   background: yellow; * /
+}
+a.link{
+  text-decoration: none;
+  color: white;
+  background: black;
+  padding: 10px 20px;
+  float: right;
+  right: 400px;
+  position: relative;
+}
+.page{
+  height: 200%;
+  width: 100%;
+  top: -50%;
+  left: 0%;
+  position: absolute;
+  overflow: hidden;
+  transform: rotateZ(-30deg);
+  transition: transform 1s, left 1s;
+  transform-origin: 100% 37.5%;
+}
+.page>#pdf_renderer_lf,
+.page #pdf_renderer_rt-holder,
+.page #pdf_renderer_rt{
+  height: 300px;
+  width: 500px;
+  position: absolute;
+  background-size: cover;
+  transition: transform 1s, left 1s;
+  background-color: black;
+  color: white;
+}
+.page>#pdf_renderer_lf{
+  top: 37.5%;
+  left: 50%;
+  transform: rotateZ(30deg) translateX(0);
+  transform-origin: 100% 0%;
+  box-shadow: inset 10px 0 10px -8px #000000;
+}
+.page #pdf_renderer_rt-holder{
+  left: 100%;
+  top: 0;
+  transition: left 1s, transform 1s;
+  transform-origin: 0% 0%;
+  transform: rotateZ(-60deg);
+}
+.page #pdf_renderer_rt{
+  left: 0%;
+  top: 0;
+  transform: rotateZ(0deg);
+  transform-origin: 0% 0%;
+  transition: top 1s, left 1s;
+  box-shadow: inset -15px 0 22px -10px #000000;
+}
+.page #pdf_renderer_rt:after{
+  content: ' ';
+  position: absolute;
+  height: 100%;
+  transform: rotateZ(-0.7deg);
+  transform-origin: 0% 100%;
+  width: 100%;
+  box-shadow: 10px 8px 10px -1px rgba(0,0,0, 0.8);
+}
+.page-holder:hover .page{
+  transform: rotateZ(-0deg);
+  left: -50%;
+}
+.page-holder:hover .page>#pdf_renderer_lf{
+  transform: rotateZ(0deg) translateX(100%);
+}
+.page-holder:hover #pdf_renderer_rt-holder{
+  left: 0%;
+  transform: rotateZ(0deg);
+/*   transform: rotateZ(0deg);
+  top: 0; * /
+}
+.page-holder:hover #pdf_renderer_rt{
+  left: -100%;
+} * /
+
+/ * 
+#insta{
+  position: fixed;
+  top: 50px;
+  right: 80px;
+  height: 80px;
+  width: 80px;
+  border-radius: 51px;
+  overflow: hidden;
+  box-shadow: 0 1px 12px -1px;
+}
+#insta a{
+  display: block;
+}
+#insta img{
+  width: 100%;
+} */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: sans-serif;
+  background-color: powderblue;
+}
+
+/* Book */
+.book {
+  position: relative;
+  width: 350px;
+  height: 500px;
+  transition: transform 0.5s;
+}
+
+.paper {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 0;
+  left: 0;
+  perspective: 1500px;
+
+}
+
+#pdf_renderer_lf,
+#pdf_renderer_rt {
+  background-color: white;
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+
+#pdf_renderer_lf {
+  z-index: 1;
+  backface-visibility: visible;
+  border-left: 3px solid powderblue;
+}
+
+#pdf_renderer_rt {
+  z-index: 0;
+}
+
+#pdf_renderer_lf-content,
+#pdf_renderer_rt-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#pdf_renderer_rt-content {
+  transform: rotateY(180deg)
+}
+
+/* Paper flip effect */
+.flipped #pdf_renderer_lf,
+.flipped #pdf_renderer_rt {
+  transform: rotateY(-180deg);
+}
+
+/* Controller Buttons */
+button {
+  border: none;
+  background-color:blue;
+  cursor: pointer;
+  margin: 10px;
+  transition: transform 0.5s;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover i {
+  color: #636363;
+}
+
+i {
+  font-size: 50px;
+  color: gray;
+}
+
+/* Paper stack order * /
+#p1 {
+  z-index: 3;
+}
+
+#p2 {
+  z-index: 2;
+}
+
+#p3 {
+  z-index: 1;
+}

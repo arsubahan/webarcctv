@@ -1,0 +1,39 @@
+<div style="background-color: rgb(9, 53, 42); height:402px; width:100%; margin-top: 0px; margin-bottom: 0px;">
+   <form [formGroup] = "loginForm" novalidate>
+        <div class="form-group"
+            style="background-color:transparent; width: 100%; align-items: center; 
+                                                text-align: center; font-size: .7em; padding:0px; border-radius: 10px; margin: auto;">
+            <h3 style=" font-size: 1.8em; color:aliceblue; width: 100%">Client Login</h3>
+
+            <mat-form-field style="width:fit-content">
+                <mat-label> Client Token.</mat-label>
+                <input matInput  hidden class="form-control" formControlName="clToken" type="text" />
+                <mat-icon fontIcon="person" matSuffix></mat-icon>
+            </mat-form-field>
+
+            <mat-form-field style="width:fit-content">
+                <mat-label> Client Code.</mat-label>
+                <input matInput oninput="this.value = this.value.toUpperCase()" class="form-control"
+                    formControlName="clcode" type="text" />
+                <mat-icon fontIcon="person" matSuffix></mat-icon>
+            </mat-form-field>
+
+            <mat-form-field style="width: fit-content">
+                <mat-label> Password</mat-label>
+                <input matInput class="form-control" formControlName="clpassword" type="password" />
+                <mat-icon fontIcon="password" matSuffix></mat-icon>
+            </mat-form-field>
+
+            <br>
+             <button class="btn btn-success" [disabled]="loginForm.invalid"  (click)="cmdupdate(loginForm.value)" >
+                Login
+            </button>
+                    <!-- &nbsp;&nbsp;&nbsp;
+            <button class="btn btn-success" (click)="forgotpasword()">
+                Forgot Passward
+            </button> -->
+
+        </div>
+    </form>
+    <!-- end for login form -->
+</div> <!--end for box 2-->
