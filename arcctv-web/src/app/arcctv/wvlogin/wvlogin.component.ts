@@ -93,7 +93,7 @@ export class WvloginComponent implements OnInit {
             this.loginForm.patchValue({ clToken: this.fcmToken });
         }
 
-        //   this.toast.success('\n\nthis.fcmToken = ' + this.fcmToken);
+           this.toast.success('\n\nthis.fcmToken = ' + this.fcmToken);
 
     }
 

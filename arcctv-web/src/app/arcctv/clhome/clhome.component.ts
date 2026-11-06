@@ -259,7 +259,8 @@ console.log("\n\nwssUrl = " + this.wssUrl + "\n\n");
     // const canvas = this.videoCanvas.nativeElement;
     var canvas = document.getElementById('video-canvas');
     canvas.style.transform = 'scale(5.9)'; // Enlarge the live stream by 20% on hover
-    canvas.style.zIndex = '50';
+ // canvas.style.verticalAlign = 'top'; // Align the enlarged canvas to the top
+  //  canvas.style.zIndex = '90';
   }
 
   resetZoom(): void {
